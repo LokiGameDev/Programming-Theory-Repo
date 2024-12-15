@@ -361,6 +361,7 @@
 "Assets/Scripts/Bullet.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyBullet.cs"
+"Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/SmallEnemy.cs"
 "Assets/Scripts/SpawnManager.cs"
