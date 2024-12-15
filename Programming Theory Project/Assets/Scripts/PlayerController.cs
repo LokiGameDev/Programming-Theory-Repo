@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     private float speed = 10;
     private bool canShoot = true;
+    public AudioClip bulletAudioClip;
+    private AudioSource playerAudio;
     private float yDeg;
     public float lives
     {
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         isPlayerAlive = true;
         lives = 3;
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +71,8 @@ public class PlayerController : MonoBehaviour
     {
         if(canShoot)
         {
+            playerAudio.clip = bulletAudioClip;
+            playerAudio.Play();
             Instantiate(bulletPrefab , transform.position , bulletPrefab.transform.rotation);
             canShoot = false;
             StartCoroutine(BulletReloadCoolDown());
